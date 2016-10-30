@@ -6,26 +6,32 @@ import java.util.Random;
  * Date: 2016/10/24
  * Author: 105021026 周永振老師
  */
-
+import java.util.Scanner;
 public class ex06 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Random r = new Random();
-		int[][] n = new int[10][10];
-		for (int i = 0; i < 10; i++) {
-			for (int j = 0; j < 10; j++) {
-				n[i][j] = r.nextInt(9);
-
-			}
-
+		Scanner scn = new Scanner(System.in);
+		int n = scn.nextInt();
+		int[] data = new int[n];
+		for (int i=0;i<n;i++){
+			data[i] = scn.nextInt();
 		}
-		for (int j = 0; j < 10; j++) {
-			for (int i = 0; i < 10; i++) {
-				System.out.print(n[i][j]);
+			int a=0;
+			int b=0;	
+			int c=0;			
+		for(int j=0;j<n;j++){
+			for(int k=0;k<n;k++){
+				if(data[k]>a){
+					a=data[k];
+					b=k;
+				}
 			}
-			System.out.println();
+			c=a;
+			data[b]=-1;
+			a=0;
+					b=0;
+					System.out.print(c);
 		}
-
-	}
+}
 }
